@@ -6,7 +6,10 @@ while (True):
     print(i+1, end=" ")
     if(i==44):
         break
-    i=i+1"""
+    i=i+1
+    
+    any thing u want
+    """
 
 i=0
 while(True):
