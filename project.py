@@ -136,22 +136,22 @@ def check_rce(url):
             is_vulnerable = True
     return is_vulnerable
 
-def check_csrf(url):
-    print("*************************CSRF vulnarbility*************************")
-    # get the CSRF token
-    res = s.get(url)
-    soup = bs(res.content, "html.parser")
-    csrf = soup.find("input", attrs={"name": "csrf_token"})["value"]
-    print("[+] CSRF token obtained:", csrf)
-    # craft the data
-    data = {
-        "csrf_token": csrf,
-        "username": "admin",
-        "password": "admin",
-    }
-    # make the login request
-    res = s.post(url, data=data)
-    return "logged in" in res.content.decode()
+# def check_csrf(url):
+#     print("*************************CSRF vulnarbility*************************")
+#     # get the CSRF token
+#     res = s.get(url)
+#     soup = bs(res.content, "html.parser")
+#     csrf = soup.find("input", attrs={"name": "csrf_token"})["value"]
+#     print("[+] CSRF token obtained:", csrf)
+#     # craft the data
+#     data = {
+#         "csrf_token": csrf,
+#         "username": "admin",
+#         "password": "admin",
+#     }
+#     # make the login request
+#     res = s.post(url, data=data)
+#     return "logged in" in res.content.decode()
 
 
 
